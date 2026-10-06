@@ -1,0 +1,30 @@
+name: AntiCheat
+version: '${project.version}'
+main: com.springknight3.anticheat.AntiCheatPlugin
+api-version: '1.21'
+depend:
+  - packetevents
+commands:
+  ac:
+    description: Anti-cheat administration
+    usage: /ac <violations|exempt|reset|add|config>
+    permission: anticheat.admin
+  acmanage:
+    description: Configure anti-cheat checks
+    usage: /acmanage <enable|disable|set> <check> [property] [value]
+    permission: anticheat.manage
+  acviolations:
+    description: Inspect anti-cheat violations
+    usage: /acviolations [player] [check]
+    permission: anticheat.inspector
+permissions:
+  anticheat.admin:
+    default: op
+  anticheat.manage:
+    default: op
+  anticheat.inspector:
+    default: op
+  anticheat.alert:
+    default: op
+  anticheat.exempt:
+    default: false

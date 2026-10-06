@@ -1,0 +1,182 @@
+checks-version: 2
+
+checks:
+  movement:
+    fly:
+      enabled: true
+      tolerance-margin: 0.08
+      max-upward-speed: 0.42
+      zero-motion-packet-limit: 8
+      setback-vl: 3
+      actions:
+        - "5:ac alert %player% Fly (Type A)"
+        - "15:ac setback %player%"
+      punishments:
+        - "30:kick %player% Unfair Advantage - Movement Hacks"
+    speed:
+      enabled: true
+      max-ground-speed: 0.32
+      max-air-speed: 0.36
+      tick-duration-ms: 50
+      tolerance-margin: 0.12
+      setback-vl: 3
+      actions:
+        - "5:ac alert %player% Speed"
+        - "20:ac setback %player%"
+      punishments:
+        - "35:kick %player% Unfair Advantage - Movement Hacks"
+    noslow:
+      enabled: true
+      max-item-use-speed-ratio: 0.2
+      actions:
+        - "5:ac alert %player% NoSlowdown"
+    nofall:
+      enabled: true
+      min-descending-speed: 0.1
+      actions:
+        - "5:ac alert %player% NoFall"
+      punishments:
+        - "30:kick %player% Unfair Advantage - NoFall"
+    jesus:
+      enabled: true
+      actions:
+        - "5:ac alert %player% Jesus"
+    step:
+      enabled: true
+      max-step-height: 0.6
+      actions:
+        - "5:ac alert %player% Step"
+  vehicle:
+    boatfly:
+      enabled: true
+      max-vertical-speed: 0.1
+      setback-vl: 2
+      actions:
+        - "3:ac alert %player% BoatFly"
+        - "10:ac setback %player%"
+      punishments:
+        - "20:kick %player% Unfair Advantage - BoatFly"
+    entityspeed:
+      enabled: true
+      max-mount-speed: 0.6
+      tolerance-margin: 0.2
+      actions:
+        - "5:ac alert %player% EntitySpeed"
+    phase:
+      enabled: true
+      actions:
+        - "5:ac alert %player% VehiclePhase"
+  combat:
+    aimbot:
+      enabled: true
+      max-attack-rotation-degrees: 120.0
+      rotation-window-ms: 150
+      snap-attacks-before-flag: 2
+      actions:
+        - "3:ac alert %player% Aimbot"
+    hitbox:
+      enabled: true
+      tolerance-blocks: 0.45
+      actions:
+        - "3:ac alert %player% Hitbox"
+    reach:
+      enabled: true
+      max-survival-reach: 3.0
+      max-creative-reach: 5.0
+      buffer-decay: 0.25
+      actions:
+        - "3:ac alert %player% Reach"
+      punishments:
+        - "10:kick %player% Unfair Advantage - Combat Hacks"
+    velocity:
+      enabled: true
+      max-horizontal-reduction: 0.99
+      max-vertical-reduction: 0.99
+      actions:
+        - "5:ac alert %player% Velocity / Anti-Knockback"
+    criticals:
+      enabled: true
+      actions:
+        - "5:ac alert %player% Criticals"
+    rotation:
+      enabled: true
+      max-snap-degrees: 180.0
+      actions:
+        - "5:ac alert %player% Rotation"
+  click:
+    autoclicker:
+      enabled: true
+      max-cps: 18
+      window-ms: 1000
+      min-std-deviation: 0.05
+      actions:
+        - "5:ac alert %player% AutoClicker (CPS: %cps%)"
+      punishments:
+        - "15:kick %player% Unfair Advantage - AutoClicker"
+    fastplace:
+      enabled: true
+      min-place-delay-ms: 45
+      actions:
+        - "5:ac alert %player% FastPlace"
+  inventory:
+    autototem:
+      enabled: true
+      min-swap-delay-ms: 60
+      actions:
+        - "3:ac alert %player% AutoTotem"
+    inventorymove:
+      enabled: true
+      movement-window-ms: 250
+      actions:
+        - "5:ac alert %player% InventoryMove"
+    cheststealer:
+      enabled: true
+      min-click-delay-ms: 100
+      actions:
+        - "5:ac alert %player% ChestStealer"
+  world:
+    airplace:
+      enabled: true
+      max-place-distance: 5.0
+      actions:
+        - "3:ac alert %player% AirPlace"
+    baritone:
+      enabled: true
+      minimum-pattern-length: 5
+      actions:
+        - "5:ac alert %player% Baritone / Automated Pathing"
+    scaffold:
+      enabled: true
+      min-facing-dot: -0.1
+      actions:
+        - "5:ac alert %player% Scaffold / Tower"
+    timer:
+      enabled: true
+      max-game-speed: 1.02
+      sample-packets: 40
+      tick-duration-ms: 50
+      actions:
+        - "5:ac alert %player% Timer"
+    fastbreak:
+      enabled: true
+      min-break-delay-ms: 50
+      actions:
+        - "5:ac alert %player% FastBreak"
+  packet:
+    badpackets:
+      enabled: true
+      max-movement-packets-per-second: 120
+      world-coordinate-limit: 30000000
+      actions:
+        - "2:ac alert %player% BadPackets"
+    selfinteract:
+      enabled: true
+      actions:
+        - "1:ac alert %player% SelfInteract"
+  chat:
+    spam:
+      enabled: true
+      window-seconds: 5
+      max-messages: 5
+      actions:
+        - "2:ac alert %player% ChatSpam"

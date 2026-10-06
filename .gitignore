@@ -15,3 +15,7 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# Agent related stuff
+DO NOT TOUCH/
+INSTRUCTIONS.md

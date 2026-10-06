@@ -1,0 +1,33 @@
+config-version: 2
+
+settings:
+  debug-mode: false
+  op-always-exempt: true
+  enable-metrics: false
+  storage-backend: SQLITE
+  storage:
+    save-interval-ticks: 1200
+    mysql:
+      host: localhost
+      port: 3306
+      database: anticheat
+      username: anticheat
+      password: ""
+      use-ssl: true
+
+exemptions:
+  players: []
+  ips: []
+
+vl-settings:
+  decay-interval-ticks: 20
+  decay-amount: 0.1
+  alert-cooldown-ms: 1000
+  player-warning-cooldown-ms: 5000
+
+punishments:
+  enabled: true
+
+broadcast:
+  BROADCAST TO CONSOLE: true
+  BROADCAST GLOBAL: false
